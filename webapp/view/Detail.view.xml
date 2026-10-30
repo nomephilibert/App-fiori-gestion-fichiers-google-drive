@@ -1,0 +1,37 @@
+<mvc:View controllerName="com.poc.drivemanager.controller.Detail"
+  xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+  <Page title="Détail du fichier" showNavButton="true" navButtonPress=".onNavBack">
+    <ObjectHeader title="{file>/name}" icon="sap-icon://document"/>
+
+    <VBox class="detailInfo">
+      <HBox class="sapUiTinyMarginBottom">
+        <Label text="Nom :" design="Bold" width="12rem"/>
+        <Text text="{file>/name}"/>
+      </HBox>
+      <HBox class="sapUiTinyMarginBottom">
+        <Label text="ID :" design="Bold" width="12rem"/>
+        <Text text="{file>/id}"/>
+      </HBox>
+      <HBox class="sapUiTinyMarginBottom">
+        <Label text="Type :" design="Bold" width="12rem"/>
+        <Text text="{file>/mimeType}"/>
+      </HBox>
+      <HBox class="sapUiTinyMarginBottom">
+        <Label text="Taille (octets) :" design="Bold" width="12rem"/>
+        <Text text="{file>/size}"/>
+      </HBox>
+      <HBox class="sapUiTinyMarginBottom">
+        <Label text="Date création :" design="Bold" width="12rem"/>
+        <Text text="{file>/createdTime}"/>
+      </HBox>
+    </VBox>
+
+    <footer>
+      <OverflowToolbar>
+        <ToolbarSpacer/>
+        <Button text="Modifier" icon="sap-icon://edit" press=".onUpdatePress"/>
+        <Button text="Supprimer" icon="sap-icon://delete" type="Reject" press=".onDelete"/>
+      </OverflowToolbar>
+    </footer>
+  </Page>
+</mvc:View>

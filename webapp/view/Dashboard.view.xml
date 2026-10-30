@@ -1,0 +1,32 @@
+<mvc:View controllerName="com.poc.drivemanager.controller.Dashboard"
+  xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core">
+  <Page showHeader="false">
+    <VBox class="sapUiSmallMargin">
+
+  <HBox wrap="Wrap" items="{dash>/tiles}" class="sapUiSmallMarginBottom">
+  <GenericTile header="{dash>label}" frameType="OneByOne" class="dashTile">
+    <customData>
+      <core:CustomData key="kind" value="{dash>kind}" writeToDom="true"/>
+    </customData>
+    <TileContent>
+      <NumericContent value="{dash>count}" withMargin="false"/>
+    </TileContent>
+  </GenericTile>
+</HBox>    
+
+      <Panel headerText="Répartition par type" width="auto">
+        <VBox items="{dash>/types}">
+          <VBox class="sapUiTinyMarginBottom">
+            <HBox justifyContent="SpaceBetween">
+              <Text text="{dash>label}"/>
+              <Text text="{dash>count}"/>
+            </HBox>
+            <ProgressIndicator percentValue="{dash>percent}" displayValue="{dash>percent} %"
+              state="Information"/>
+          </VBox>
+        </VBox>
+      </Panel>
+
+    </VBox>
+  </Page>
+</mvc:View>

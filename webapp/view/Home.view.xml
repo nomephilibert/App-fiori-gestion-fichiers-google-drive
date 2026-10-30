@@ -1,0 +1,48 @@
+<mvc:View controllerName="com.poc.drivemanager.controller.Home"
+  xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core">
+  <Page showHeader="false">
+    <VBox alignItems="Center" class="homeContainer">
+
+      <Title text="Gestion des fichiers Google Drive" level="H1" titleStyle="H1"
+        width="100%" textAlign="Center" wrapping="true" class="homeTitle"/>
+      <!-- <Text class="homeSubtitle" textAlign="Center"
+        text="Plateforme centralisée pour consulter, importer, modifier et supprimer vos fichiers Google Drive via SAP CPI."/> -->
+
+      <Label text="" class="homeSection"/>
+
+      <HBox wrap="Wrap" justifyContent="Center" class="homeCards">
+
+        <VBox class="homeCard" alignItems="Center">
+          <core:Icon src="sap-icon://list" class="homeIcon homeIconBlue"/>
+          <Title text="Liste des fichiers" level="H3"/>
+          <Text class="homeCardText" textAlign="Center"
+            text="Recherchez, consultez, modifiez, supprimez, importez et téléchargez vos fichiers."/>
+          <Button text="Afficher les fichiers" icon="sap-icon://list" type="Emphasized" press=".onNavigate">
+            <customData><core:CustomData key="target" value="list"/></customData>
+          </Button>
+        </VBox>
+
+        <VBox class="homeCard" alignItems="Center">
+          <core:Icon src="sap-icon://bar-chart" class="homeIcon homeIconOrange"/>
+          <Title text="Tableau de bord" level="H3"/>
+          <Text class="homeCardText" textAlign="Center"
+            text="Vue d'ensemble : nombre total de fichiers et répartition par type."/>
+          <Button text="Ouvrir le dashboard" icon="sap-icon://bar-chart" press=".onNavigate">
+            <customData><core:CustomData key="target" value="dashboard"/></customData>
+          </Button>
+        </VBox>
+
+        <VBox class="homeCard" alignItems="Center">
+          <core:Icon src="sap-icon://action-settings" class="homeIcon homeIconGreen"/>
+          <Title text="Paramètres" level="H3"/>
+          <Text class="homeCardText" textAlign="Center"
+            text="Réglez l'affichage de la liste et les préférences de l'application."/>
+          <Button text="Ouvrir les paramètres" icon="sap-icon://action-settings" press=".onNavigate">
+            <customData><core:CustomData key="target" value="settings"/></customData>
+          </Button>
+        </VBox>
+
+      </HBox>
+    </VBox>
+  </Page>
+</mvc:View>

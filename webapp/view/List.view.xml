@@ -1,0 +1,41 @@
+<mvc:View controllerName="com.poc.drivemanager.controller.List"
+  xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+  <Page showHeader="false">
+    <Table id="fileTable" items="{/files}" mode="MultiSelect" multiSelectMode="ClearAll" selectionChange=".onSelectionChange" growing="true" growingThreshold="{prefs>/pageSize}">
+      <headerToolbar>
+        <OverflowToolbar>
+          <Title text="{view>/title}" level="H2"/>
+          <SearchField width="18rem" placeholder="Rechercher un fichier…" search=".onSearch"/>
+          <ToolbarSpacer/>
+          <Button text="Importer" icon="sap-icon://upload" type="Emphasized" press=".onUploadPress"/>
+          <Button text="Télécharger" icon="sap-icon://download" type="Emphasized" press=".onDownload"/>
+          <Button icon="sap-icon://refresh" type="Transparent" press=".onRefresh"/>
+        </OverflowToolbar>
+      </headerToolbar>
+      <columns>
+  <Column><Text text="Nom"/></Column>
+  <Column><Text text="ID"/></Column>
+  <Column><Text text="Type"/></Column>
+  <Column hAlign="End"><Text text="Taille (octets)"/></Column>
+  <Column><Text text="Date création"/></Column>
+  <Column hAlign="End" width="9rem"><Text text=""/></Column>
+</columns>
+<items>
+  <ColumnListItem type="Navigation" press=".onItemPress">
+    <cells>
+      <ObjectIdentifier title="{name}"/>
+      <Text text="{id}"/>
+      <Text text="{mimeType}"/>
+      <Text text="{size}"/>
+      <Text text="{createdTime}"/>
+      <HBox class="rowActions">
+        <Button icon="sap-icon://edit" type="Transparent" tooltip="Modifier" press=".onRowEdit"/>
+        <Button icon="sap-icon://delete" type="Transparent" tooltip="Supprimer" class="rowDelete" press=".onRowDelete"/>
+        <Button icon="sap-icon://show" type="Transparent" tooltip="Voir le détail" press=".onRowView"/>
+      </HBox>
+    </cells>
+  </ColumnListItem>
+</items>
+    </Table>
+  </Page>
+</mvc:View>

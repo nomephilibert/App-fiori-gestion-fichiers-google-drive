@@ -1,0 +1,13 @@
+<mvc:View controllerName="com.poc.drivemanager.controller.Themes"
+  xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+  <Page showHeader="false">
+    <Panel headerText="Choisir un thème" class="sapUiSmallMargin" width="auto">
+      <List mode="SingleSelectLeft" includeItemInSelection="true"
+        items="{themes>/list}" selectionChange=".onThemeChange">
+        <StandardListItem title="{themes>label}" description="{themes>desc}"
+          icon="{themes>icon}"
+          selected="{= ${themes>key} === ${prefs>/theme} }"/>
+      </List>
+    </Panel>
+  </Page>
+</mvc:View>

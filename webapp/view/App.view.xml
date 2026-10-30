@@ -1,0 +1,37 @@
+<mvc:View controllerName="com.poc.drivemanager.controller.App"
+  xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:tnt="sap.tnt" displayBlock="true">
+  <tnt:ToolPage id="ToolPage" class="noSide">
+    <tnt:header>
+      <tnt:ToolHeader id="ToolHeader">
+        <Title text="Drive Manager" id="Title"/>
+        <ToolbarSpacer id="ToolbarSpacer"/>
+        <Avatar initials="PH" displaySize="XS" id="Avatar"/>
+      </tnt:ToolHeader>
+    </tnt:header>
+    <tnt:sideContent>
+      <tnt:SideNavigation id="sideNav" selectedKey="home" itemSelect=".onItemSelect">
+        <tnt:NavigationList>
+          <tnt:NavigationListItem text="Accueil"   icon="sap-icon://home"            key="home"/>
+          <tnt:NavigationListItem text="Liste"     icon="sap-icon://list"            key="list"/>
+          <tnt:NavigationListItem text="Tableau de bord" icon="sap-icon://bar-chart"       key="dashboard"/>
+          <tnt:NavigationListItem text="Paramètres"  icon="sap-icon://action-settings" key="settings"/>
+          <tnt:NavigationListItem text="Thèmes"    icon="sap-icon://palette"         key="themes"/>
+        </tnt:NavigationList>
+      </tnt:SideNavigation>
+    </tnt:sideContent>
+    <tnt:mainContents>
+  <FlexBox direction="Column" height="100%" renderType="Bare">
+    <items>
+      <App id="app">
+        <layoutData>
+          <FlexItemData growFactor="1" baseSize="0" minHeight="0"/>
+        </layoutData>
+      </App>
+      <HBox class="appFooter" justifyContent="Center" alignItems="Center">
+        <Text text="© SaperpSolutions 2026"/>
+      </HBox>
+    </items>
+  </FlexBox>
+</tnt:mainContents>
+  </tnt:ToolPage>
+</mvc:View>

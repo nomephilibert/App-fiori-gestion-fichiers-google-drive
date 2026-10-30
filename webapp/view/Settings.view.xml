@@ -1,0 +1,26 @@
+<mvc:View controllerName="com.poc.drivemanager.controller.Settings"
+  xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:form="sap.ui.layout.form">
+  <Page showHeader="false">
+    <VBox class="sapUiSmallMargin">
+
+      <Panel headerText="Liste des fichiers" class="sapUiSmallMarginBottom" width="auto">
+        <HBox alignItems="Center">
+          <Label text="Fichiers affichés par page" class="sapUiSmallMarginEnd"/>
+          <StepInput value="{prefs>/pageSize}" min="10" max="200" step="10"
+            width="9rem" change=".onPrefChange"/>
+        </HBox>
+      </Panel>
+
+      <Panel headerText="À propos" class="sapUiSmallMarginBottom" width="auto">
+        <form:SimpleForm editable="false" layout="ResponsiveGridLayout">
+          <Label text="Application"/><Text text="Drive_Manager (POC SAP CPI, partie 2)"/>
+          <Label text="API CPI"/><Text text="/manage/file/gd/v1/*"/>
+          <Label text="Destination"/><Text text="CPI_DRIVE"/>
+        </form:SimpleForm>
+      </Panel>
+
+      <Button text="Réinitialiser les préférences" icon="sap-icon://reset"
+        type="Reject" press=".onReset"/>
+    </VBox>
+  </Page>
+</mvc:View>
